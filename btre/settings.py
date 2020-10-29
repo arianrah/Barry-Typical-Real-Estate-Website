@@ -114,4 +114,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'btre/static')
 ]
 
-mimetypes.add_type("text/css", ".css", True)
+# mimetypes.add_type("text/css", ".css", True)

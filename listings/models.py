@@ -1,6 +1,6 @@
 from django.db import models
 from datetime import datetime
-from realtors.models import realtor
+from realtors.models import Realtor
 
 
 class Listing(models.Model):

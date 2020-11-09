@@ -29,16 +29,9 @@
                 <label class="sr-only">Province</label>
                 <select name="province" class="form-control">
                   <option selected="true" disabled="disabled">Province (All)</option>
-                  <option value="AB">Alberta</option>
-                  <option value="BC">British Columbia</option>
-                  <option value="MB">Manitoba</option>
-                  <option value="NB">New Brunswick</option>
-                  <option value="NL">Newfoundland and Labrador</option>
-                  <option value="NS">Nova Scotia</option>
-                  <option value="ON">Ontario</option>
-                  <option value="PEI">Prince Edward Island</option>
-                  <option value="QC">Quebec</option>
-                  <option value="SK">Saskatchewan</option>
+                  {% for k,v in province_choices.items %}
+                  <option value="{{k}}">{{v}}</option>
+                  {% endfor %}
                 </select>
               </div>
             </div>
@@ -48,30 +41,17 @@
                 <label class="sr-only">Bedrooms</label>
                 <select name="bedrooms" class="form-control">
                   <option selected="true" disabled="disabled">Bedrooms (All)</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
+                  {% for k,v in bedrooms_choices.items %}
+                  <option value="{{k}}">{{v}}</option>
+                  {% endfor %}
                 </select>
               </div>
               <div class="col-md-6 mb-3">
                 <select name="price" class="form-control" id="type">
                   <option selected="true" disabled="disabled">Max Price (Any)</option>
-                  <option value="300000">$300,000</option>
-                  <option value="400000">$400,000</option>
-                  <option value="500000">$500,000</option>
-                  <option value="600000">$600,000</option>
-                  <option value="700000">$700,000</option>
-                  <option value="800000">$800,000</option>
-                  <option value="900000">$900,000</option>
-                  <option value="1000000">$1M</option>
-                  <option value="1000000">$2M+</option>
+                  {% for k,v in price_choices.items %}
+                  <option value="{{k}}">{{v}}</option>
+                  {% endfor %}
                 </select>
               </div>
             </div>
@@ -128,7 +108,7 @@
                 <i class="fas fa-clock"></i> {{ listing.list_date | timesince }}</div>
             </div>
             <hr>
-            <a href="{% url 'listing' listing.id %} class="btn btn-primary btn-block">More Info</a>
+            <a href="{% url 'listing' listing.id %} class=" btn btn-primary btn-block">More Info</a>
           </div>
         </div>
       </div>

@@ -3,6 +3,8 @@ import os
 import mimetypes
 from pathlib import Path
 
+import contact_info
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -131,5 +133,12 @@ MEDIA_URL = '/media/'
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
+
+# email config
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'ari.btrealestate@gmail.com'
+EMAIL_HOST_PASSWORD = contact_info.pw
+EMAIL_USE_TLS = True
 
 # mimetypes.add_type("text/css", ".css", True)

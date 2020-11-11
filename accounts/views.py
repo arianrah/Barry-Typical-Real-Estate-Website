@@ -53,7 +53,19 @@ def register(request):
 def login(request):
     if request.method == 'POST':
         # login user
-        return
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = auth.authenticate(username=username, password=password)
+
+        # user found
+        if user is not None:
+            auth.login(request, user)
+            messages.success(request, 'Valid Credentials!')
+            return redirect('dashboard')
+        else:
+            messages.error(request, 'Username or password is invalid')
+            return redirect('login')
     else:
         return render(request, 'accounts/login.html')
 
@@ -63,4 +75,7 @@ def dashboard(request):
 
 
 def logout(request):
-    return redirect(request, 'index')
+    if request.method == 'POST':
+        auth.logout(request)
+        messages.success(request, 'You are now logged out')
+        return redirect('index')

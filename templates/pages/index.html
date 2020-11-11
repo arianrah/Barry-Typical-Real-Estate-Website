@@ -12,7 +12,7 @@
           vel nostrum magnam
           voluptatum tempore! Consectetur, id commodi!</p>
         <div class="search">
-          <form action="search.html">
+          <form action="{% url 'search' %}">
             <!-- Form Row 1 -->
             <div class="form-row">
               <div class="col-md-4 mb-3">
@@ -108,7 +108,7 @@
                 <i class="fas fa-clock"></i> {{ listing.list_date | timesince }}</div>
             </div>
             <hr>
-            <a href="{% url 'listing' listing.id %} class=" btn btn-primary btn-block">More Info</a>
+            <a href="{% url 'listing' listing.id %}" class="btn btn-primary btn-block">More Info</a>
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+from django.contrib.messages import constants as messages
 import os
 import mimetypes
 from pathlib import Path
@@ -124,5 +125,10 @@ STATICFILES_DIRS = [
 # media folder settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
 
 # mimetypes.add_type("text/css", ".css", True)

@@ -1,12 +1,25 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 
 
 def register(request):
-    return render(request, 'accounts/register.html')
+    if request.method == 'POST':
+        # print('submitted registration')
+        # return redirect('register')
+
+        # reg user
+        messages.error(request, 'Testing error message')
+        return redirect('register')
+    else:
+        return render(request, 'accounts/register.html')
 
 
 def login(request):
-    return render(request, 'accounts/login.html')
+    if request.method == 'POST':
+        # login user
+        return
+    else:
+        return render(request, 'accounts/login.html')
 
 
 def dashboard(request):

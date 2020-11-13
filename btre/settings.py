@@ -142,3 +142,8 @@ MESSAGE_TAGS = {
 # EMAIL_USE_TLS = True
 
 # mimetypes.add_type("text/css", ".css", True)
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass

@@ -137,7 +137,7 @@ MESSAGE_TAGS = {
 # email config
 # EMAIL_HOST = 'smtp.gmail.com'
 # EMAIL_PORT = 587
-# EMAIL_HOST_USER = 'ari.btrealestate@gmail.com'
+# EMAIL_HOST_USER = ''
 # EMAIL_HOST_PASSWORD = contact_info.pw
 # EMAIL_USE_TLS = True
 

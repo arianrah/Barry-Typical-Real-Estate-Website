@@ -32,8 +32,8 @@ def contact(request):
         # send_mail(
         #     '(BTRE) Property Listing Inquiry',
         #     'Inquiry for ' + listing + '. Sign into admin area to view.',
-        #     'ari.btrealestate@gmail.com',
-        #     [realtor_email, 'ari.btrealestate@gmail.com'],
+        #     '',
+        #     [realtor_email, ''],
         #     fail_silently=False,
         # )
         messages.success(
